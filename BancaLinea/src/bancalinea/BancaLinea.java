@@ -98,7 +98,7 @@ public class BancaLinea {
                 System.exit(0);
                 break;
             default:
-                System.out.println("Opción inválida. Intente nuevamente.");
+                System.out.println("Opción invalida. Intente nuevamente.");
         }
     }
     
@@ -131,7 +131,7 @@ public class BancaLinea {
             case 9:
                 return true;
             default:
-                System.out.println("Opción inválida. Intente nuevamente.");
+                System.out.println("Opción invalida. Intente nuevamente.");
         }
         return false;
     }
@@ -139,7 +139,7 @@ public class BancaLinea {
     private static void iniciarSesion() {
         System.out.print("Nombre de usuario: ");
         String nombreUsuario = scanner.nextLine();
-        System.out.print("Contraseña: ");
+        System.out.print("Contrasena: ");
         String contraseña = scanner.nextLine();
         
         usuarioActual = sistema.autenticarUsuario(nombreUsuario, contraseña);
@@ -154,7 +154,7 @@ public class BancaLinea {
     private static void registrarUsuario() {
         System.out.print("Nuevo nombre de usuario: ");
         String nombreUsuario = scanner.nextLine();
-        System.out.print("Nueva contraseña: ");
+        System.out.print("Nueva contrasena: ");
         String contraseña = scanner.nextLine();
         
         boolean registrado = sistema.registrarUsuario(nombreUsuario, contraseña);
@@ -187,7 +187,7 @@ public class BancaLinea {
         double interesAnual = Double.parseDouble(scanner.nextLine());
         
         cuenta cuenta = sistema.crearCuentaAhorro(usuarioActual, saldoInicial, interesAnual);
-        System.out.println("Cuenta de ahorro creada con éxito: " + cuenta);
+        System.out.println("Cuenta de ahorro creada con exito: " + cuenta);
     }
     
     private static void crearCuentaCorriente() {
@@ -213,17 +213,17 @@ public class BancaLinea {
             System.out.println((i + 1) + ". " + cuentas.get(i));
         }
         
-        System.out.print("Número de opción: ");
+        System.out.print("Número de opcion: ");
         try {
             int opcion = Integer.parseInt(scanner.nextLine());
             if (opcion >= 1 && opcion <= cuentas.size()) {
                 return cuentas.get(opcion - 1);
             } else {
-                System.out.println("Opción inválida.");
+                System.out.println("Opcion invalida.");
                 return null;
             }
         } catch (NumberFormatException e) {
-            System.out.println("Opción inválida.");
+            System.out.println("Opcion invalida.");
             return null;
         }
     }
@@ -242,7 +242,7 @@ public class BancaLinea {
             
             boolean resultado = sistema.depositar(cuenta, monto);
             if (resultado) {
-                System.out.println("Depósito realizado con éxito. Nuevo saldo: $" + cuenta.getSaldo());
+                System.out.println("Depósito realizado con exito. Nuevo saldo: $" + cuenta.getSaldo());
             } else {
                 System.out.println("No se pudo realizar el depósito.");
             }
@@ -305,7 +305,7 @@ public class BancaLinea {
                 System.out.println("No se pudo realizar la transferencia. Fondos insuficientes.");
             }
         } catch (NumberFormatException e) {
-            System.out.println("Monto inválido.");
+            System.out.println("Monto invalido.");
         }
     }
     
